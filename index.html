@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadence — Premium Audio Gear</title>
+  <meta name="description"
+    content="Cadence is a curated online store for premium audio gear — headphones, speakers, turntables, and accessories. Sound, considered." />
+  <meta property="og:title" content="Cadence — Premium Audio Gear" />
+  <meta property="og:description"
+    content="Sound, considered. Shop the finest headphones, speakers, turntables and accessories." />
+  <meta name="theme-color" content="#070A0F" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ===== AMBIENT BACKGROUND ===== -->
+  <div class="bg-orbs" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <!-- ===== TOAST CONTAINER ===== -->
+  <div id="toast-container" class="toast-container" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a href="#" class="logo" id="logo-link" aria-label="Cadence Home">
+        <div class="logo-icon" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <circle cx="14" cy="14" r="12" stroke="url(#lglogo)" stroke-width="2" />
+            <circle cx="14" cy="14" r="6" fill="url(#lglogo)" opacity="0.6" />
+            <circle cx="14" cy="14" r="2.5" fill="white" />
+            <defs>
+              <linearGradient id="lglogo" x1="0" y1="0" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#22D3EE" />
+                <stop offset="0.5" stop-color="#3B82F6" />
+                <stop offset="1" stop-color="#6366F1" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <span class="logo-text">Cadence</span>
+      </a>
+
+      <nav class="header-nav" role="navigation" aria-label="Main navigation">
+        <a href="#catalog" class="nav-link" id="nav-shop">Shop</a>
+        <a href="#catalog" class="nav-link" id="nav-headphones" data-category="Headphones">Headphones</a>
+        <a href="#catalog" class="nav-link" id="nav-speakers" data-category="Speakers">Speakers</a>
+        <a href="#catalog" class="nav-link" id="nav-turntables" data-category="Turntables">Turntables</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="search-wrapper" role="search">
+          <label for="header-search" class="sr-only">Search products</label>
+          <svg class="search-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <circle cx="6.5" cy="6.5" r="5" stroke="currentColor" stroke-width="1.5" />
+            <path d="M10.5 10.5L14 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+          </svg>
+          <input type="text" id="header-search" class="search-input" placeholder="Search gear…" autocomplete="off" />
+          <kbd class="search-kbd" aria-hidden="true">/</kbd>
+        </div>
+
+        <button class="icon-btn wishlist-toggle-btn" id="wishlist-btn" aria-label="View wishlist">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M10 17s-7-4.5-7-9a4 4 0 0 1 7-2.65A4 4 0 0 1 17 8c0 4.5-7 9-7 9z" stroke="currentColor"
+              stroke-width="1.5" stroke-linejoin="round" />
+          </svg>
+          <span class="badge" id="wishlist-badge" aria-label="0 wishlist items">0</span>
+        </button>
+
+        <button class="icon-btn cart-toggle-btn" id="cart-btn" aria-label="Open cart">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M2 2h1.5l2.5 9h9l2-6H6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <circle cx="8.5" cy="15.5" r="1.5" fill="currentColor" />
+            <circle cx="14.5" cy="15.5" r="1.5" fill="currentColor" />
+          </svg>
+          <span class="badge" id="cart-badge" aria-label="0 items in cart">0</span>
+        </button>
+
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Nav -->
+    <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+      <a href="#catalog" class="mobile-nav-link">Shop All</a>
+      <a href="#catalog" class="mobile-nav-link" data-category="Headphones">Headphones</a>
+      <a href="#catalog" class="mobile-nav-link" data-category="Speakers">Speakers</a>
+      <a href="#catalog" class="mobile-nav-link" data-category="Turntables">Turntables</a>
+      <a href="#catalog" class="mobile-nav-link" data-category="Accessories">Accessories</a>
+    </div>
+  </header>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main id="main-content">
+
+    <!-- HERO BANNER -->
+    <section class="promo-banner" id="promo-banner" aria-label="Promotional banner">
+      <div class="promo-content">
+        <span class="promo-pill">New Arrivals</span>
+        <p class="promo-text">The 2026 collection is here — <strong>Planar Pro X & Studio One</strong> now in stock</p>
+        <span class="promo-arrow">→</span>
+      </div>
+      <button class="promo-close" id="promo-close" aria-label="Dismiss banner">✕</button>
+    </section>
+
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="hero">
+      <div class="hero-inner">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="hero-badge-dot"></span>
+            Premium Audio · Est. 2019
+          </div>
+          <h1 class="hero-title">Sound,<br /><span class="hero-title-gradient">considered.</span></h1>
+          <p class="hero-subtitle">Curated audio gear from the world's most thoughtful makers. No compromises, no noise
+            — just the instruments that make listening an experience.</p>
+          <div class="hero-cta-row">
+            <a href="#catalog" class="btn btn-primary" id="hero-shop-btn">Shop the Collection</a>
+            <a href="#catalog" class="btn btn-ghost" id="hero-new-btn" data-category-filter="New">New Arrivals</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat">
+              <span class="stat-value">16</span>
+              <span class="stat-label">Products</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+              <span class="stat-value">4</span>
+              <span class="stat-label">Categories</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+              <span class="stat-value">4.8★</span>
+              <span class="stat-label">Avg Rating</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-product-showcase">
+            <div class="showcase-ring ring-outer"></div>
+            <div class="showcase-ring ring-mid"></div>
+            <div class="showcase-ring ring-inner"></div>
+            <div class="showcase-product">
+              <svg width="180" height="180" viewBox="0 0 180 180" fill="none">
+                <!-- Headphones SVG art -->
+                <circle cx="90" cy="90" r="80" fill="url(#bgcirc)" opacity="0.08" />
+                <path d="M40 90 C40 62 62 40 90 40 C118 40 140 62 140 90" stroke="url(#hpgrad)" stroke-width="8"
+                  stroke-linecap="round" fill="none" />
+                <rect x="28" y="82" width="24" height="36" rx="12" fill="url(#hpgrad)" opacity="0.9" />
+                <rect x="128" y="82" width="24" height="36" rx="12" fill="url(#hpgrad)" opacity="0.9" />
+                <rect x="30" y="88" width="20" height="24" rx="10" fill="rgba(255,255,255,0.05)" />
+                <rect x="130" y="88" width="20" height="24" rx="10" fill="rgba(255,255,255,0.05)" />
+                <defs>
+                  <linearGradient id="hpgrad" x1="40" y1="40" x2="140" y2="140" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#22D3EE" />
+                    <stop offset="0.5" stop-color="#3B82F6" />
+                    <stop offset="1" stop-color="#6366F1" />
+                  </linearGradient>
+                  <radialGradient id="bgcirc" cx="50%" cy="50%" r="50%">
+                    <stop stop-color="#22D3EE" />
+                    <stop offset="1" stop-color="transparent" />
+                  </radialGradient>
+                </defs>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATALOG SECTION -->
+    <section class="catalog-section" id="catalog">
+      <div class="catalog-inner">
+
+        <!-- Filter & Sort Bar -->
+        <div class="filter-bar" id="filter-bar">
+          <div class="filter-bar-top">
+            <div class="category-pills" role="group" aria-label="Filter by category">
+              <button class="pill active" id="pill-all" data-category="All">All</button>
+              <button class="pill" id="pill-headphones" data-category="Headphones">Headphones</button>
+              <button class="pill" id="pill-speakers" data-category="Speakers">Speakers</button>
+              <button class="pill" id="pill-turntables" data-category="Turntables">Turntables</button>
+              <button class="pill" id="pill-accessories" data-category="Accessories">Accessories</button>
+            </div>
+            <div class="sort-controls">
+              <label for="sort-select" class="sr-only">Sort by</label>
+              <select id="sort-select" class="sort-select" aria-label="Sort products">
+                <option value="default">Featured</option>
+                <option value="price-asc">Price: Low → High</option>
+                <option value="price-desc">Price: High → Low</option>
+                <option value="rating">Top Rated</option>
+                <option value="newest">Newest</option>
+              </select>
+            </div>
+          </div>
+          <div class="filter-bar-bottom">
+            <div class="filter-extras">
+              <div class="price-filter">
+                <label class="filter-label" for="price-range">Max Price: <span id="price-display"
+                    class="filter-value">$5,000</span></label>
+                <input type="range" id="price-range" class="price-range" min="0" max="5000" value="5000" step="50"
+                  aria-label="Maximum price filter" />
+              </div>
+              <label class="toggle-filter" for="instock-toggle">
+                <input type="checkbox" id="instock-toggle" class="sr-only" />
+                <span class="toggle-track">
+                  <span class="toggle-thumb"></span>
+                </span>
+                <span class="toggle-label">In Stock Only</span>
+              </label>
+            </div>
+            <p class="results-count" id="results-count" aria-live="polite">Showing 16 of 16 products</p>
+          </div>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="product-grid" id="product-grid" role="list" aria-label="Product catalog">
+          <!-- Injected by JS -->
+        </div>
+
+        <!-- Empty State -->
+        <div class="empty-state" id="empty-state" hidden aria-live="polite">
+          <div class="empty-icon" aria-hidden="true">
+            <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+              <circle cx="32" cy="32" r="28" stroke="rgba(255,255,255,0.08)" stroke-width="2" />
+              <path d="M20 32 C20 25.4 25.4 20 32 20 C38.6 20 44 25.4 44 32" stroke="url(#esgrad)" stroke-width="2.5"
+                stroke-linecap="round" fill="none" />
+              <rect x="16" y="28" width="10" height="14" rx="5" fill="url(#esgrad)" opacity="0.5" />
+              <rect x="38" y="28" width="10" height="14" rx="5" fill="url(#esgrad)" opacity="0.5" />
+              <line x1="26" y1="46" x2="38" y2="46" stroke="rgba(255,255,255,0.3)" stroke-width="2"
+                stroke-linecap="round" />
+              <defs>
+                <linearGradient id="esgrad" x1="20" y1="20" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#22D3EE" stop-opacity="0.5" />
+                  <stop offset="1" stop-color="#6366F1" stop-opacity="0.5" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <h3 class="empty-title">No products found</h3>
+          <p class="empty-desc">Try adjusting your filters or search term.</p>
+          <button class="btn btn-ghost" id="reset-filters-btn">Clear Filters</button>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== PRODUCT DETAIL MODAL ===== -->
+  <div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-product-name"
+    hidden>
+    <div class="modal" id="product-modal">
+      <button class="modal-close" id="modal-close" aria-label="Close product detail">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+          <path d="M2 2l14 14M16 2L2 16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+        </svg>
+      </button>
+      <div class="modal-body" id="modal-body">
+        <!-- Injected by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== CART DRAWER ===== -->
+  <div class="cart-overlay" id="cart-overlay" aria-hidden="true"></div>
+  <aside class="cart-drawer" id="cart-drawer" role="complementary" aria-label="Shopping cart" aria-hidden="true">
+    <div class="cart-header">
+      <div class="cart-header-left">
+        <h2 class="cart-title">Your Cart</h2>
+        <span class="cart-item-count" id="cart-item-count">0 items</span>
+      </div>
+      <button class="icon-btn" id="cart-close" aria-label="Close cart">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+          <path d="M2 2l14 14M16 2L2 16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+        </svg>
+      </button>
+    </div>
+
+    <div class="cart-body" id="cart-body">
+      <!-- Cart items or empty state -->
+    </div>
+
+    <div class="cart-footer" id="cart-footer" hidden>
+      <div class="cart-summary">
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <span id="cart-subtotal">$0.00</span>
+        </div>
+        <div class="summary-row">
+          <span>Shipping</span>
+          <span class="free-shipping">Free</span>
+        </div>
+        <div class="summary-row summary-total">
+          <span>Total</span>
+          <span id="cart-total">$0.00</span>
+        </div>
+      </div>
+      <button class="btn btn-primary btn-full" id="checkout-btn">
+        Checkout
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </button>
+    </div>
+  </aside>
+
+  <!-- ===== ORDER CONFIRMATION ===== -->
+  <div class="order-confirm" id="order-confirm" hidden aria-live="polite">
+    <div class="confirm-inner">
+      <div class="confirm-icon" aria-hidden="true">
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+          <circle cx="24" cy="24" r="22" fill="url(#confirmgrad)" opacity="0.15" />
+          <circle cx="24" cy="24" r="22" stroke="url(#confirmgrad)" stroke-width="1.5" />
+          <path d="M14 24l7 7 13-13" stroke="url(#confirmgrad)" stroke-width="2.5" stroke-linecap="round"
+            stroke-linejoin="round" />
+          <defs>
+            <linearGradient id="confirmgrad" x1="2" y1="2" x2="46" y2="46" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#22D3EE" />
+              <stop offset="1" stop-color="#6366F1" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <h3 class="confirm-title">Order Placed!</h3>
+      <p class="confirm-text">Thank you for your purchase. Your audio gear is on its way.</p>
+      <button class="btn btn-ghost" id="confirm-continue">Continue Shopping</button>
+    </div>
+  </div>
+
+  <!-- ===== WISHLIST DRAWER ===== -->
+  <div class="wishlist-overlay" id="wishlist-overlay" aria-hidden="true"></div>
+  <aside class="wishlist-drawer" id="wishlist-drawer" role="complementary" aria-label="Wishlist" aria-hidden="true">
+    <div class="cart-header">
+      <div class="cart-header-left">
+        <h2 class="cart-title">Wishlist</h2>
+        <span class="cart-item-count" id="wishlist-item-count">0 items</span>
+      </div>
+      <button class="icon-btn" id="wishlist-close" aria-label="Close wishlist">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+          <path d="M2 2l14 14M16 2L2 16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+        </svg>
+      </button>
+    </div>
+    <div class="cart-body" id="wishlist-body">
+      <!-- Wishlist items or empty state -->
+    </div>
+  </aside>
+
+  <script src="products.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
