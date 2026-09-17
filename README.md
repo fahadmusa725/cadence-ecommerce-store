@@ -77,3 +77,4 @@ Then open `http://localhost:3000` in your browser.
 
 **Part of a 4-project internship submission for Auspify Technologies.**
 See also: [PulseTrack](https://github.com/fahadmusa725/pulsetrack-landing-page) · [Flowboard](https://github.com/fahadmusa725/flowboard-task-manager) · [Skyline](https://github.com/fahadmusa725/skyline-weather-dashboard)
+
