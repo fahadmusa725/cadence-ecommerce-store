@@ -7,7 +7,7 @@ A modern e-commerce frontend for **Cadence**, a curated audio gear store (headph
 ![Status](https://img.shields.io/badge/status-complete-brightgreen) ![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
 
 ## Live Demo
-[View Live Site](#) <!-- add your deployed link here -->
+[cadence-ecommerce.netlify.app](https://cadence-ecommerce.netlify.app)
 
 ## Features
 
@@ -23,6 +23,17 @@ A modern e-commerce frontend for **Cadence**, a curated audio gear store (headph
 - **Toast notifications** for all actions — no `alert()`/`confirm()` anywhere
 - Respects `prefers-reduced-motion`, and every interactive element has proper ARIA labeling
 - Fully responsive 4 → 2 → 1 column product grid
+
+## Screenshots
+
+### Desktop
+![Desktop View](screenshots/desktop-hero.png)
+
+### Key Feature
+![Feature](screenshots/feature.png)
+
+### Mobile
+![Mobile View](screenshots/mobile-view.png)
 
 ## Design System
 
@@ -65,4 +76,4 @@ Then open `http://localhost:3000` in your browser.
 ---
 
 **Part of a 4-project internship submission for Auspify Technologies.**
-See also: [PulseTrack](#) · [Flowboard](#) · [Skyline](#)
+See also: [PulseTrack](https://github.com/fahadmusa725/pulsetrack-landing-page) · [Flowboard](https://github.com/fahadmusa725/flowboard-task-manager) · [Skyline](https://github.com/fahadmusa725/skyline-weather-dashboard)
