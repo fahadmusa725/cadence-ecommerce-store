@@ -1,8 +1,8 @@
-# Cadence — Premium Audio Gear Store
+# Cadence: Premium Audio Gear Store
 
-> **Auspify Technologies Internship — Task 5 (E-Commerce Product Interface)**
+> **Auspify Technologies Internship: Task 5 (E-Commerce Product Interface)**
 
-A modern e-commerce frontend for **Cadence**, a curated audio gear store (headphones, speakers, turntables, accessories). Built entirely frontend-side with a 16-product static catalog, composable filtering, a persistent cart, and a wishlist — completing the 4-project portfolio's shared design system.
+A modern e-commerce frontend for **Cadence**, a curated audio gear store (headphones, speakers, turntables, accessories). Built entirely frontend-side with a 16-product static catalog, composable filtering, a persistent cart, and a wishlist, completing the 4-project portfolio's shared design system.
 
 ![Status](https://img.shields.io/badge/status-complete-brightgreen) ![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
 
@@ -12,15 +12,15 @@ A modern e-commerce frontend for **Cadence**, a curated audio gear store (headph
 ## Features
 
 - **16-product catalog** across 4 categories (Headphones, Speakers, Turntables, Accessories), each with unique per-category SVG art
-- **Composable filtering** — category, price range, in-stock toggle, and live search all work together without resetting each other
-- **Sort control** — price (low/high), rating, newest
-- **Shopping cart drawer** — quantity steppers, item removal, running subtotal, "fly to cart" animation on add
-- **Product detail modal** — full description, specs, independent quantity selector
-- **Wishlist** — heart-toggle on any product, its own slide-in drawer, live badge count
+- **Composable filtering**: category, price range, in-stock toggle, and live search all work together without resetting each other
+- **Sort control**: price (low/high), rating, newest
+- **Shopping cart drawer**: quantity steppers, item removal, running subtotal, "fly to cart" animation on add
+- **Product detail modal**: full description, specs, independent quantity selector
+- **Wishlist**: heart-toggle on any product, its own slide-in drawer, live badge count
 - **Full `localStorage` persistence** for both cart and wishlist
 - **Animated checkout flow** with an order-confirmation state (no real backend needed)
 - **Designed empty states** for empty cart, wishlist, and no search/filter results
-- **Toast notifications** for all actions — no `alert()`/`confirm()` anywhere
+- **Toast notifications** for all actions; no `alert()`/`confirm()` anywhere
 - Respects `prefers-reduced-motion`, and every interactive element has proper ARIA labeling
 - Fully responsive 4 → 2 → 1 column product grid
 

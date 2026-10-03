@@ -1,10 +1,9 @@
 /* ==========================================================================
-   CADENCE — Premium Audio Store
+   CADENCE: Premium Audio Store
    Design System: Unified PulseTrack / Flowboard / Skyline Aesthetics
    Theme: Deep dark, cyan→indigo gradient, glassmorphism, boutique feel
    ========================================================================== */
 
-/* ── DESIGN TOKENS ──────────────────────────────────────────────────────── */
 :root {
   /* Base Colors */
   --bg-primary: #070A0F;
@@ -69,7 +68,6 @@
   --drawer-w: 420px;
 }
 
-/* ── RESET & BASE ───────────────────────────────────────────────────────── */
 *,
 *::before,
 *::after {
@@ -146,7 +144,6 @@ ol {
   border: 0;
 }
 
-/* ── AMBIENT BACKGROUND ORBS ────────────────────────────────────────────── */
 .bg-orbs {
   position: fixed;
   inset: 0;
@@ -207,7 +204,6 @@ ol {
   }
 }
 
-/* ── HEADER ─────────────────────────────────────────────────────────────── */
 .site-header {
   position: sticky;
   top: 0;
@@ -462,7 +458,6 @@ ol {
   background: var(--glass-bg-hover);
 }
 
-/* ── BUTTONS ─────────────────────────────────────────────────────────────── */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -534,7 +529,6 @@ ol {
   font-size: 0.8125rem;
 }
 
-/* ── PROMO BANNER ────────────────────────────────────────────────────────── */
 .promo-banner {
   position: relative;
   z-index: 1;
@@ -602,7 +596,6 @@ ol {
   background: var(--glass-bg-hover);
 }
 
-/* ── HERO ────────────────────────────────────────────────────────────────── */
 .hero-section {
   position: relative;
   z-index: 1;
@@ -795,7 +788,6 @@ ol {
   }
 }
 
-/* ── CATALOG SECTION ─────────────────────────────────────────────────────── */
 .catalog-section {
   position: relative;
   z-index: 1;
@@ -996,7 +988,6 @@ ol {
   white-space: nowrap;
 }
 
-/* ── PRODUCT GRID ────────────────────────────────────────────────────────── */
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -1015,7 +1006,6 @@ ol {
   transform: translateY(0);
 }
 
-/* ── PRODUCT CARD ─────────────────────────────────────────────────────────── */
 .product-card {
   background: var(--glass-bg);
   border: 1px solid var(--glass-border);
@@ -1302,7 +1292,6 @@ ol {
   transform: scale(0.95);
 }
 
-/* ── EMPTY STATE ─────────────────────────────────────────────────────────── */
 .empty-state {
   text-align: center;
   padding: 80px 24px;
@@ -1327,7 +1316,6 @@ ol {
   margin-bottom: 24px;
 }
 
-/* ── PRODUCT MODAL ────────────────────────────────────────────────────────── */
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -1553,7 +1541,6 @@ ol {
   background: var(--text-dim);
 }
 
-/* ── QTY STEPPER ──────────────────────────────────────────────────────────── */
 .qty-stepper {
   display: inline-flex;
   align-items: center;
@@ -1607,7 +1594,6 @@ ol {
   text-align: center;
 }
 
-/* ── CART DRAWER ──────────────────────────────────────────────────────────── */
 .cart-overlay,
 .wishlist-overlay {
   position: fixed;
@@ -1854,7 +1840,6 @@ ol {
   color: var(--text-muted);
 }
 
-/* ── ORDER CONFIRMATION ───────────────────────────────────────────────────── */
 .order-confirm {
   position: fixed;
   inset: 0;
@@ -1907,7 +1892,6 @@ ol {
   margin-bottom: 28px;
 }
 
-/* ── TOAST ───────────────────────────────────────────────────────────────── */
 .toast-container {
   position: fixed;
   bottom: 24px;
@@ -1963,7 +1947,6 @@ ol {
   color: var(--accent-blue);
 }
 
-/* ── FLY TO CART ANIMATION ───────────────────────────────────────────────── */
 .fly-particle {
   position: fixed;
   z-index: 500;
@@ -1993,7 +1976,6 @@ ol {
   }
 }
 
-/* ── SCROLLBAR ────────────────────────────────────────────────────────────── */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
@@ -2012,7 +1994,6 @@ ol {
   background: var(--text-dim);
 }
 
-/* ── RESPONSIVE ──────────────────────────────────────────────────────────── */
 @media (max-width: 1024px) {
   .hero-inner {
     grid-template-columns: 1fr;
@@ -2201,7 +2182,6 @@ ol {
   }
 }
 
-/* ── REDUCED MOTION ───────────────────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
 
   *,

@@ -1,12 +1,11 @@
 /**
- * Cadence — Premium Audio Store
+ * Cadence: Premium Audio Store
  * Main Application Logic
  * State → Render architecture: all UI derives from a single state object.
  */
 
 'use strict';
 
-// ─── STATE ────────────────────────────────────────────────────────────────────
 const state = {
   cart: [],
   wishlist: [],
@@ -22,10 +21,8 @@ const state = {
   wishlistOpen: false,
 };
 
-// ─── CONSTANTS ────────────────────────────────────────────────────────────────
 const MAX_PRICE_CEILING = 5000;
 
-// ─── STORAGE HELPERS ──────────────────────────────────────────────────────────
 function saveCart() {
   try { localStorage.setItem('cadence_cart', JSON.stringify(state.cart)); } catch {}
 }
@@ -45,7 +42,6 @@ function loadWishlist() {
   } catch { state.wishlist = []; }
 }
 
-// ─── PRODUCT HELPERS ──────────────────────────────────────────────────────────
 function getEffectivePrice(p) {
   return p.salePrice !== null ? p.salePrice : p.price;
 }
@@ -59,7 +55,6 @@ function getCartItem(id) {
   return state.cart.find(i => i.id === id) || null;
 }
 
-// ─── FILTER + SORT ────────────────────────────────────────────────────────────
 function getFilteredProducts() {
   let products = [...PRODUCTS];
   const { category, search, maxPrice, inStockOnly, sort } = state.filters;
@@ -91,7 +86,6 @@ function getFilteredProducts() {
   return products;
 }
 
-// ─── PRODUCT SVG ART ─────────────────────────────────────────────────────────
 /**
  * Generates a consistent, shape-specific SVG illustration per product.
  * Each shape gets a gradient that uses the product's accent color,
@@ -298,7 +292,6 @@ function productSVG(product) {
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" class="product-svg" aria-hidden="true">${gradDef}${svg}</svg>`;
 }
 
-// ─── STAR RATING ──────────────────────────────────────────────────────────────
 function renderStars(rating) {
   const full = Math.floor(rating);
   const half = rating % 1 >= 0.5;
@@ -307,7 +300,6 @@ function renderStars(rating) {
   return `<span class="stars" aria-label="${rating} out of 5 stars">${stars}</span>`;
 }
 
-// ─── RENDER PRODUCT CARD ──────────────────────────────────────────────────────
 function renderProductCard(product) {
   const effectivePrice = getEffectivePrice(product);
   const inWL = isInWishlist(product.id);
@@ -370,7 +362,6 @@ function renderProductCard(product) {
   </article>`;
 }
 
-// ─── RENDER CATALOG ───────────────────────────────────────────────────────────
 function renderCatalog() {
   const products = getFilteredProducts();
   const grid = document.getElementById('product-grid');
@@ -392,7 +383,6 @@ function renderCatalog() {
   }
 }
 
-// ─── CART OPERATIONS ─────────────────────────────────────────────────────────
 function addToCart(id) {
   const product = PRODUCTS.find(p => p.id === id);
   if (!product || !product.inStock) return;
@@ -435,7 +425,6 @@ function clearCart() {
   renderCatalog();
 }
 
-// ─── CART UI ──────────────────────────────────────────────────────────────────
 function cartItemHTML(item) {
   const product = PRODUCTS.find(p => p.id === item.id);
   if (!product) return '';
@@ -503,7 +492,6 @@ function renderCart() {
   }
 }
 
-// ─── WISHLIST OPERATIONS ──────────────────────────────────────────────────────
 function toggleWishlist(id) {
   const idx = state.wishlist.indexOf(id);
   const product = PRODUCTS.find(p => p.id === id);
@@ -580,7 +568,6 @@ function renderWishlist() {
   }
 }
 
-// ─── BADGES ───────────────────────────────────────────────────────────────────
 function updateBadges() {
   const totalItems = state.cart.reduce((s, i) => s + i.qty, 0);
   const cartBadge = document.getElementById('cart-badge');
@@ -593,7 +580,6 @@ function updateBadges() {
   wishlistBadge.classList.toggle('visible', state.wishlist.length > 0);
 }
 
-// ─── CART DRAWER OPEN/CLOSE ───────────────────────────────────────────────────
 function openCart() {
   state.cartOpen = true;
   document.getElementById('cart-drawer').classList.add('open');
@@ -625,7 +611,6 @@ function closeWishlist() {
   document.body.classList.remove('drawer-open');
 }
 
-// ─── PRODUCT MODAL ────────────────────────────────────────────────────────────
 function openModal(id) {
   const product = PRODUCTS.find(p => p.id === id);
   if (!product) return;
@@ -701,7 +686,7 @@ function openModal(id) {
                <circle cx="8" cy="8" r="7" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
                <path d="M8 5v3M8 10.5v.5" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round"/>
              </svg>
-             Currently out of stock — check back soon
+             Currently out of stock, check back soon
            </div>`}
       <div class="modal-stock-status">
         <span class="stock-dot ${product.inStock ? 'in' : 'out'}"></span>
@@ -763,7 +748,6 @@ function closeModal() {
   state.modalProductId = null;
 }
 
-// ─── TOAST ────────────────────────────────────────────────────────────────────
 function showToast(message, type = 'info') {
   const container = document.getElementById('toast-container');
   const toast = document.createElement('div');
@@ -782,7 +766,6 @@ function showToast(message, type = 'info') {
   }, 3000);
 }
 
-// ─── FLY TO CART ANIMATION ────────────────────────────────────────────────────
 function flyToCart(productId) {
   const card = document.querySelector(`.card-wrapper[data-id="${productId}"] .card-image-bg`);
   const cartBtn = document.getElementById('cart-btn');
@@ -802,7 +785,6 @@ function flyToCart(productId) {
   fly.addEventListener('animationend', () => fly.remove());
 }
 
-// ─── CHECKOUT FLOW ────────────────────────────────────────────────────────────
 function triggerCheckout() {
   closeCart();
   const confirm = document.getElementById('order-confirm');
@@ -811,7 +793,6 @@ function triggerCheckout() {
   clearCart();
 }
 
-// ─── FILTER HELPERS ───────────────────────────────────────────────────────────
 function setCategory(cat) {
   state.filters.category = cat;
   document.querySelectorAll('.pill').forEach(p => {
@@ -832,7 +813,6 @@ function resetFilters() {
   setCategory('All');
 }
 
-// ─── KEYBOARD SHORTCUT ────────────────────────────────────────────────────────
 function setupSearchShortcut() {
   document.addEventListener('keydown', e => {
     if (e.key === '/' && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
@@ -847,7 +827,6 @@ function setupSearchShortcut() {
   });
 }
 
-// ─── HEADER SCROLL ────────────────────────────────────────────────────────────
 function setupHeaderScroll() {
   let lastY = 0;
   const header = document.getElementById('site-header');
@@ -858,7 +837,6 @@ function setupHeaderScroll() {
   }, { passive: true });
 }
 
-// ─── EVENT DELEGATION ─────────────────────────────────────────────────────────
 function setupDelegatedEvents() {
   // Product grid: card actions
   document.getElementById('product-grid').addEventListener('click', e => {
@@ -925,7 +903,7 @@ function setupDelegatedEvents() {
     pill.addEventListener('click', () => setCategory(pill.dataset.category));
   });
 
-  // Nav category links (header nav + mobile nav only — not the filter pills)
+  // Nav category links (header nav + mobile nav only, not the filter pills)
   document.querySelectorAll('.nav-link[data-category], .mobile-nav-link[data-category]').forEach(link => {
     link.addEventListener('click', e => {
       e.preventDefault();
@@ -968,7 +946,7 @@ function setupDelegatedEvents() {
     }, 180);
   });
 
-  // Price range — update filter state, display label, and slider fill via CSS custom property
+  // Price range: update filter state, display label, and slider fill via CSS custom property
   const priceRangeEl = document.getElementById('price-range');
   function updatePriceRangeFill(el) {
     const pct = ((el.value - el.min) / (el.max - el.min)) * 100;
@@ -1048,7 +1026,6 @@ function setupDelegatedEvents() {
   });
 }
 
-// ─── INIT ─────────────────────────────────────────────────────────────────────
 function init() {
   loadCart();
   loadWishlist();

@@ -1,5 +1,5 @@
 /**
- * Cadence — Premium Audio Store
+ * Cadence: Premium Audio Store
  * Static product data
  */
 
@@ -88,7 +88,7 @@ const PRODUCTS = [
     category: "Speakers",
     price: 399,
     salePrice: 319,
-    description: "Wireless multi-room speaker with 360° sound dispersion. AirPlay 2, Spotify Connect, Bluetooth 5.0. Fabric mesh enclosure, RGB ambient ring (disable it — the sound is the point).",
+    description: "Wireless multi-room speaker with 360° sound dispersion. AirPlay 2, Spotify Connect, Bluetooth 5.0. Fabric mesh enclosure, RGB ambient ring (disable it: the sound is the point).",
     rating: 4.4,
     reviewCount: 672,
     inStock: true,
