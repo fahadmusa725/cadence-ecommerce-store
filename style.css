@@ -2039,8 +2039,26 @@ ol {
   }
 
   .header-inner {
-    padding: 0 16px;
-    gap: 16px;
+    gap: 8px;
+    padding: 0 12px;
+  }
+
+  .header-actions {
+    flex: 1;
+    min-width: 0;
+    flex-shrink: 1;
+    gap: 6px;
+  }
+
+  .search-wrapper {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .search-input,
+  .search-input:focus {
+    width: 100%;
+    min-width: 0;
   }
 
   .header-nav {
@@ -2049,18 +2067,19 @@ ol {
 
   .mobile-menu-btn {
     display: flex;
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+  }
+
+  .icon-btn {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
   }
 
   .mobile-nav {
     display: flex;
-  }
-
-  .search-input {
-    width: 160px;
-  }
-
-  .search-input:focus {
-    width: 200px;
   }
 
   .search-kbd {
@@ -2141,6 +2160,15 @@ ol {
 }
 
 @media (max-width: 480px) {
+  .logo-text {
+    display: none;
+  }
+
+  .search-input {
+    padding: 8px 10px 8px 34px;
+    font-size: 0.8125rem;
+  }
+
   .product-grid {
     grid-template-columns: 1fr 1fr;
     gap: 12px;
