@@ -26,14 +26,18 @@ A modern e-commerce frontend for **Cadence**, a curated audio gear store (headph
 
 ## Screenshots
 
-### Desktop
-![Desktop View](screenshots/desktop-hero.png)
-
-### Key Feature
-![Feature](screenshots/feature.png)
-
-### Mobile
-![Mobile View](screenshots/mobile-view.png)
+<table>
+  <tr>
+    <th align="center">Desktop</th>
+    <th align="center">Cart drawer</th>
+    <th align="center">Mobile</th>
+  </tr>
+  <tr>
+    <td><img src="screenshots/desktop-hero.png" width="360" alt="PROJECT desktop view"></td>
+    <td><img src="screenshots/feature.png" width="360" alt="PROJECT FEATURE_TITLE"></td>
+    <td><img src="screenshots/mobile-view.png" width="165" alt="PROJECT mobile view"></td>
+  </tr>
+</table>
 
 ## Design System
 
