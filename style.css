@@ -427,23 +427,20 @@ ol {
 
 /* Mobile Nav */
 .mobile-nav {
-  display: none;
-  flex-direction: column;
-  gap: 2px;
+  display: none; flex-direction: column; gap: 2px;
+  position: absolute; top: 100%; left: 0; right: 0;
   padding: 12px 16px 16px;
   border-top: 1px solid var(--glass-border);
-  background: rgba(7, 10, 15, 0.92);
-  transform: translateY(-8px);
-  opacity: 0;
-  transition: opacity var(--t-base), transform var(--t-base);
+  background: rgba(7,10,15,0.92);
+  transform: translateY(-8px); opacity: 0; visibility: hidden;
+  transition: opacity var(--t-base), transform var(--t-base), visibility var(--t-base);
   pointer-events: none;
 }
-
-.mobile-nav.open {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
+.mobile-nav.open { 
+  opacity: 1; 
+  transform: translateY(0); 
+  pointer-events: auto; 
+  visibility: visible; }
 
 .mobile-nav-link {
   padding: 12px 16px;
